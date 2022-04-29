@@ -31,7 +31,9 @@
           :key="index"
       >{{ phone.value }}
       </div>
+      <button @click="removeUser(index)">remove user</button>
     </div>
+
   </div>
 </template>
 
@@ -77,7 +79,10 @@ export default {
     },
     getUsers() {
       setTimeout(() => this.users = usersDB, 1000);
-    }
+    },
+    removeUser(index) {
+      this.users.splice(index, 1);
+    },
   },
 }
 </script>
